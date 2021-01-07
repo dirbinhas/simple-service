@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  post_build:
+    commands:
+      - mvn package
+      - mv target/demo-0.0.1-SNAPSHOT.jar demo.jar
+artifacts:
+  files:
+    - demo.jar
